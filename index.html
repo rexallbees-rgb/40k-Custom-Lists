@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warhammer 40k List Builder</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚔️ Warhammer 40k List Builder</h1>
+        </header>
+
+        <main>
+            <div class="builder-layout">
+                <!-- Faction & Unit Selection -->
+                <div class="left-panel">
+                    <section class="faction-selector">
+                        <h2>Select Faction</h2>
+                        <select id="factionSelect">
+                            <option value="">-- Choose a Faction --</option>
+                            <option value="space-marines">Space Marines</option>
+                            <option value="chaos">Chaos Space Marines</option>
+                            <option value="necrons">Necrons</option>
+                            <option value="tyrannids">Tyranids</option>
+                            <option value="orks">Orks</option>
+                            <option value="eldar">Astra Militarum</option>
+                            <option value="tau">T'au Empire</option>
+                        </select>
+                    </section>
+
+                    <section class="dice-roller">
+                        <h2>🎲 Dice Roller</h2>
+                        <div class="roller-controls">
+                            <div class="dice-input-group">
+                                <label for="diceCount">Number of Dice:</label>
+                                <input type="number" id="diceCount" min="1" max="50" value="1">
+                            </div>
+                            <div class="dice-input-group">
+                                <label for="diceSides">Dice Type:</label>
+                                <select id="diceSides">
+                                    <option value="6">d6</option>
+                                    <option value="4">d4</option>
+                                    <option value="8">d8</option>
+                                    <option value="10">d10</option>
+                                    <option value="12">d12</option>
+                                    <option value="20">d20</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button id="rollBtn" class="btn btn-roll">Roll Dice</button>
+                        <div id="rollResults" class="roll-results">
+                            <!-- Results will appear here -->
+                        </div>
+                    </section>
+
+                    <section class="units-available">
+                        <h2>Available Units</h2>
+                        <div id="unitsList" class="units-grid">
+                            <!-- Units populated by JavaScript -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Army List & Summary -->
+                <div class="right-panel">
+                    <section class="army-summary">
+                        <h2>Army Summary</h2>
+                        <div class="summary-stats">
+                            <div class="stat">
+                                <span class="label">Total Points:</span>
+                                <span id="totalPoints" class="value">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Unit Count:</span>
+                                <span id="unitCount" class="value">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Model Count:</span>
+                                <span id="modelCount" class="value">0</span>
+                            </div>
+                        </div>
+                        <button id="exportBtn" class="btn btn-export">Export List</button>
+                        <button id="clearBtn" class="btn btn-danger">Clear List</button>
+                    </section>
+
+                    <section class="army-list">
+                        <h2>Your Army</h2>
+                        <div id="armyList" class="army-items">
+                            <p class="empty-message">No units selected yet</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- Battlefield Section -->
+        <section class="battlefield-section">
+            <h2>🏰 Battlefield Simulator</h2>
+            <div class="battlefield-controls">
+                <div class="control-group">
+                    <label for="battlefieldSize">Battlefield Size:</label>
+                    <select id="battlefieldSize">
+                        <option value="small">Small (4x4)</option>
+                        <option value="medium" selected>Medium (6x6)</option>
+                        <option value="large">Large (8x8)</option>
+                        <option value="22x30">22x30" Battlefield (11x15)</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="terrainDensity">Terrain Density:</label>
+                    <select id="terrainDensity">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label for="objectiveCount">Number of Objectives:</label>
+                    <input type="number" id="objectiveCount" min="0" max="20" value="3">
+                </div>
+                <button id="generateBattlefield" class="btn">Generate Battlefield</button>
+                <button id="clearBattlefield" class="btn btn-danger">Clear Units</button>
+                <div class="terrain-tools">
+                    <button id="addTerrain" class="btn btn-sm" title="Add Terrain">🌲 Add</button>
+                    <button id="addObjective" class="btn btn-sm" title="Add Objective">🏆 Add</button>
+                    <button id="clearTerrain" class="btn btn-sm btn-danger" title="Clear All Terrain">🗑️ Clear</button>
+                </div>
+            </div>
+
+            <div class="battlefield-container">
+                <div class="deployment-zone" id="playerZone">
+                    <h3>Your Deployment Zone</h3>
+                    <div id="playerDeployment" class="deployment-area">
+                        <!-- Units will be placed here -->
+                    </div>
+                </div>
+
+                <div class="battlefield-grid" id="battlefieldGrid">
+                    <!-- Battlefield grid will be generated here -->
+                </div>
+
+                <div class="deployment-zone" id="enemyZone">
+                    <h3>Enemy Deployment Zone</h3>
+                    <div id="enemyDeployment" class="deployment-area">
+                        <!-- Enemy units would go here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="strategy-panel">
+                <h3>Strategy Notes</h3>
+                <textarea id="strategyNotes" placeholder="Write your strategic thoughts, objectives, and unit placements here..."></textarea>
+                <div class="strategy-actions">
+                    <button id="saveStrategy" class="btn">Save Strategy</button>
+                    <button id="loadStrategy" class="btn">Load Strategy</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
