@@ -57,6 +57,13 @@
 
                     <section class="units-available">
                         <h2>Available Units</h2>
+                        <div class="control-group control-group-inline">
+                            <label>Add Units To:</label>
+                            <div class="side-toggle">
+                                <label><input type="radio" name="unitSide" value="player" checked> Player</label>
+                                <label><input type="radio" name="unitSide" value="enemy"> Enemy</label>
+                            </div>
+                        </div>
                         <div id="unitsList" class="units-grid">
                             <!-- Units populated by JavaScript -->
                         </div>
@@ -81,6 +88,20 @@
                                 <span id="modelCount" class="value">0</span>
                             </div>
                         </div>
+                        <div class="summary-stats enemy-summary">
+                            <div class="stat">
+                                <span class="label">Enemy Points:</span>
+                                <span id="enemyTotalPoints" class="value">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Enemy Units:</span>
+                                <span id="enemyUnitCount" class="value">0</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Enemy Models:</span>
+                                <span id="enemyModelCount" class="value">0</span>
+                            </div>
+                        </div>
                         <button id="exportBtn" class="btn btn-export">Export List</button>
                         <button id="clearBtn" class="btn btn-danger">Clear List</button>
                     </section>
@@ -89,6 +110,12 @@
                         <h2>Your Army</h2>
                         <div id="armyList" class="army-items">
                             <p class="empty-message">No units selected yet</p>
+                        </div>
+                    </section>
+                    <section class="army-list enemy-list">
+                        <h2>Opponent Army</h2>
+                        <div id="enemyArmyList" class="army-items">
+                            <p class="empty-message">No opponent units selected yet</p>
                         </div>
                     </section>
                 </div>
@@ -126,6 +153,19 @@
                     <button id="addTerrain" class="btn btn-sm" title="Add Terrain">🌲 Add</button>
                     <button id="addObjective" class="btn btn-sm" title="Add Objective">🏆 Add</button>
                     <button id="clearTerrain" class="btn btn-sm btn-danger" title="Clear All Terrain">🗑️ Clear</button>
+                </div>
+                <div class="mission-generator">
+                    <div class="mission-actions">
+                        <button id="randomMissionBtn" class="btn">🎯 Generate Mission</button>
+                        <button id="nextTurnBtn" class="btn btn-sm">➡️ Next Turn</button>
+                    </div>
+                    <div class="turn-counter">Turn: <span id="turnNumber">0</span></div>
+                    <div id="missionOutput" class="mission-output">
+                        <p class="mission-placeholder">Generate a random mission to guide your game plan.</p>
+                    </div>
+                    <div id="secondaryObjectivesOutput" class="secondary-objectives-output">
+                        <p class="mission-placeholder">Press Next Turn to generate 2 secondary objectives.</p>
+                    </div>
                 </div>
             </div>
 

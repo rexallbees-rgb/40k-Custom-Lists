@@ -221,6 +221,89 @@ section h2 {
     background: rgba(30, 30, 50, 0.8) !important;
 }
 
+.mission-generator {
+    margin-top: 15px;
+    display: grid;
+    gap: 12px;
+}
+
+.mission-output {
+    background: rgba(20, 20, 40, 0.95);
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+    padding: 15px;
+    min-height: 80px;
+    color: #dcdcdc;
+}
+
+.mission-output .mission-title {
+    font-size: 1.05em;
+    font-weight: bold;
+    color: #ffb347;
+    margin-bottom: 8px;
+}
+
+.mission-output .mission-description {
+    color: #c0c0c0;
+    line-height: 1.5;
+}
+
+.mission-placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+.mission-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.turn-counter {
+    color: #ffb347;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.secondary-objectives-output {
+    background: rgba(15, 15, 35, 0.95);
+    border: 1px solid #ff8c00;
+    border-radius: 8px;
+    padding: 15px;
+    color: #dcdcdc;
+    min-height: 90px;
+}
+
+.secondary-objective-item {
+    border: 1px solid rgba(255, 140, 0, 0.25);
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: rgba(30, 30, 50, 0.85);
+}
+
+.secondary-objective-item:last-child {
+    margin-bottom: 0;
+}
+
+.secondary-objective-title {
+    color: #ffd27f;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.secondary-objective-points {
+    color: #b0b0b0;
+    font-size: 0.9em;
+    margin-bottom: 6px;
+}
+
+.secondary-objective-description {
+    color: #c0c0c0;
+    line-height: 1.4;
+}
+
 .roller-controls {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -947,10 +1030,57 @@ section h2 {
     min-width: 120px;
 }
 
+.control-group-inline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.side-toggle {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.side-toggle label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 140, 0, 0.4);
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    color: #f0f0f0;
+}
+
+.side-toggle label:hover {
+    background: rgba(255, 140, 0, 0.12);
+    border-color: #ff8c00;
+}
+
+.side-toggle input[type="radio"] {
+    accent-color: #ff8c00;
+    width: 16px;
+    height: 16px;
+}
+
+.side-toggle input[type="radio"]:focus-visible {
+    outline: 2px solid rgba(255, 140, 0, 0.7);
+    outline-offset: 2px;
+}
+
 .control-group input:focus {
     outline: none;
     box-shadow: 0 0 6px rgba(255, 140, 0, 0.4);
     background: #1a1a2e;
+}
+
+.summary-stats.enemy-summary {
+    margin-top: 16px;
 }
 
 .battlefield-container {
@@ -1077,6 +1207,18 @@ section h2 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.battlefield-unit.player-unit {
+    background: rgba(255, 140, 0, 0.85);
+    color: #000;
+    border-color: #ff8c00;
+}
+
+.battlefield-unit.enemy-unit {
+    background: rgba(200, 50, 50, 0.9);
+    color: #fff;
+    border-color: #ff5555;
 }
 
 .battlefield-unit:hover {

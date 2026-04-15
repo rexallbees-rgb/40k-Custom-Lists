@@ -30,7 +30,8 @@ const abilityDatabase = {
     'Longshot': 'Each time this unit makes a ranged attack with a longshot pulse rifle, if the target is within half range, add 1 to the wound roll.',
     'Pulse Accelerator': 'Each time this unit makes a ranged attack with a pulse accelerator, if the target is within half range, add 1 to the wound roll.',
     'Fusion Collider': 'Each time this unit makes a ranged attack with a fusion collider, if the target is within half range, add 1 to the wound roll.',
-    'Includes 2 Stealth Drones': 'This unit includes 2 Stealth Drones that can be deployed separately or attached to this unit.'
+    'Includes 2 Stealth Drones': 'This unit includes 2 Stealth Drones that can be deployed separately or attached to this unit.',
+    'And They Shall Know No Fear': 'This unit can re-roll a failed Morale test. If it is a CHARACTER unit, it can also re-roll one failed hit roll in the Fight phase.'
 };
 
 // Unit database for each faction
@@ -149,6 +150,87 @@ const unitDatabase = {
                 { name: 'Plasma Cannon', cost: 15, range: 24, a: 1, bs: 4, s: 7, ap: -3, d: 1 },
                 { name: 'Autocannon', cost: 10, range: 48, a: 2, bs: 4, s: 7, ap: -1, d: 1 }
             ]
+        },
+        {
+            id: 11,
+            name: 'Intercessor Squad',
+            points: 120,
+            models: 10,
+            stats: { m: 6, t: 4, sv: 3, w: 1, ld: 8, oc: 1 },
+            weapons: [
+                { name: 'Bolt Rifle (included)', cost: 0, range: 24, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Auto Bolt Rifle', cost: 10, range: 24, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Bolt Rifle w/ Grenade Launcher', cost: 15, range: 24, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Hand Flamer', cost: 10, range: 8, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Plasma Pistol', cost: 10, range: 12, a: 1, bs: 4, s: 7, ap: -3, d: 1 },
+                { name: 'Bolt Pistol', cost: 0, range: 12, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Astartes Chainsword', cost: 0, range: 0, a: 2, bs: 0, s: 4, ap: 0, d: 1 },
+                { name: 'Power Weapon', cost: 5, range: 0, a: 2, bs: 0, s: 5, ap: -3, d: 1 },
+                { name: 'Power Fist', cost: 20, range: 0, a: 2, bs: 0, s: 5, ap: -3, d: 2 },
+                { name: 'Thunder Hammer', cost: 25, range: 0, a: 2, bs: 0, s: 5, ap: -4, d: 2 }
+            ],
+            abilities: ['And They Shall Know No Fear'],
+            keywords: ['ADEPTUS ASTARTES', 'INFANTRY', 'CORE']
+        },
+        {
+            id: 12,
+            name: 'Jump Pack Intercessors',
+            points: 135,
+            models: 5,
+            stats: { m: 12, t: 4, sv: 3, w: 1, ld: 8, oc: 1 },
+            weapons: [
+                { name: 'Bolt Rifle (included)', cost: 0, range: 24, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Plasma Pistol', cost: 10, range: 12, a: 1, bs: 4, s: 7, ap: -3, d: 1 }
+            ],
+            abilities: ['And They Shall Know No Fear']
+        },
+        {
+            id: 13,
+            name: 'Aggressors',
+            points: 150,
+            models: 3,
+            stats: { m: 6, t: 5, sv: 2, w: 3, ld: 8, oc: 2 },
+            weapons: [
+                { name: 'Auto Boltstorm Gauntlets (included)', cost: 0, range: 18, a: 2, bs: 4, s: 5, ap: -1, d: 1 },
+                { name: 'Heavy Boltstorm Gauntlets', cost: 15, range: 18, a: 3, bs: 4, s: 5, ap: -1, d: 1 }
+            ],
+            abilities: ['And They Shall Know No Fear']
+        },
+        {
+            id: 14,
+            name: 'Eliminators',
+            points: 120,
+            models: 3,
+            stats: { m: 6, t: 4, sv: 3, w: 1, ld: 8, oc: 1 },
+            weapons: [
+                { name: 'Heavy Bolt Sniper Rifle (included)', cost: 0, range: 30, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Bolt Pistol', cost: 0, range: 12, a: 1, bs: 4, s: 4, ap: 0, d: 1 }
+            ],
+            abilities: ['And They Shall Know No Fear']
+        },
+        {
+            id: 15,
+            name: 'Inceptors',
+            points: 135,
+            models: 3,
+            stats: { m: 12, t: 4, sv: 3, w: 1, ld: 9, oc: 1 },
+            weapons: [
+                { name: 'Assault Bolter (included)', cost: 0, range: 24, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Plasma Exterminator', cost: 15, range: 12, a: 1, bs: 4, s: 7, ap: -3, d: 1 }
+            ],
+            abilities: ['And They Shall Know No Fear']
+        },
+        {
+            id: 16,
+            name: 'Suppressors',
+            points: 150,
+            models: 3,
+            stats: { m: 12, t: 4, sv: 3, w: 1, ld: 9, oc: 1 },
+            weapons: [
+                { name: 'Heavy Intercessor Bolt Rifle (included)', cost: 0, range: 30, a: 1, bs: 4, s: 4, ap: 0, d: 1 },
+                { name: 'Plasma Exterminator', cost: 15, range: 12, a: 1, bs: 4, s: 7, ap: -3, d: 1 }
+            ],
+            abilities: ['And They Shall Know No Fear']
         }
     ],
     'chaos': [
@@ -876,31 +958,43 @@ const unitDatabase = {
 // State management
 let currentFaction = null;
 let armyList = [];
+let selectedArmySide = 'player';
 
 // DOM elements
 const factionSelect = document.getElementById('factionSelect');
 const unitsList = document.getElementById('unitsList');
 const armyListDiv = document.getElementById('armyList');
+const enemyArmyListDiv = document.getElementById('enemyArmyList');
 const totalPointsSpan = document.getElementById('totalPoints');
 const unitCountSpan = document.getElementById('unitCount');
 const modelCountSpan = document.getElementById('modelCount');
+const enemyTotalPointsSpan = document.getElementById('enemyTotalPoints');
+const enemyUnitCountSpan = document.getElementById('enemyUnitCount');
+const enemyModelCountSpan = document.getElementById('enemyModelCount');
 const exportBtn = document.getElementById('exportBtn');
 const clearBtn = document.getElementById('clearBtn');
 const rollBtn = document.getElementById('rollBtn');
 const diceCountInput = document.getElementById('diceCount');
 const diceSidesSelect = document.getElementById('diceSides');
 const rollResultsDiv = document.getElementById('rollResults');
+const unitSideInputs = document.querySelectorAll('input[name="unitSide"]');
 
 // Event listeners
 factionSelect.addEventListener('change', handleFactionChange);
 exportBtn.addEventListener('click', exportList);
 clearBtn.addEventListener('click', clearList);
 rollBtn.addEventListener('click', rollDice);
+unitSideInputs.forEach(input => input.addEventListener('change', (e) => {
+    selectedArmySide = e.target.value;
+}));
 
 function handleFactionChange(e) {
     currentFaction = e.target.value;
-    armyList = [];
     updateUI();
+}
+
+function getUnitOwner(unit) {
+    return unit.owner === 'enemy' ? 'enemy' : 'player';
 }
 
 function displayUnits() {
@@ -922,7 +1016,7 @@ function displayUnits() {
                 <p class="stats">${statsStr}</p>
                 <p class="points">${unit.points}pts | ${unit.models}M</p>
                 <p class="weapons" style="font-size: 0.75em; color: #4ecdc4; margin-top: 4px;">
-                    ${unit.weapons.map(w => `${w.name}${w.cost > 0 ? ' +' + w.cost : ''}`).join(', ')}
+                    ${unit.weapons.map(w => `${w.name}`).join(', ')}
                 </p>
             </div>
             <button class="btn btn-add" data-unit-id="${unit.id}">Add</button>
@@ -936,7 +1030,7 @@ function displayUnits() {
 }
 
 function addUnitToArmy(unit) {
-    const existingUnit = armyList.find(u => u.id === unit.id && u.faction === currentFaction);
+    const existingUnit = armyList.find(u => u.id === unit.id && u.faction === currentFaction && getUnitOwner(u) === selectedArmySide);
     
     if (existingUnit) {
         existingUnit.count++;
@@ -944,6 +1038,7 @@ function addUnitToArmy(unit) {
         armyList.push({
             ...unit,
             faction: currentFaction,
+            owner: selectedArmySide,
             count: 1,
             selectedWeapon: unit.weapons ? unit.weapons[0] : null
         });
@@ -968,77 +1063,146 @@ function decrementUnit(unitId) {
 }
 
 function displayArmyList() {
-    if (armyList.length === 0) {
+    const playerUnits = armyList.filter(u => getUnitOwner(u) === 'player');
+    const enemyUnits = armyList.filter(u => getUnitOwner(u) === 'enemy');
+
+    if (playerUnits.length === 0) {
         armyListDiv.innerHTML = '<p class="empty-message">No units selected yet</p>';
-        return;
+    } else {
+        armyListDiv.innerHTML = '';
+        playerUnits.forEach(unit => {
+            const index = armyList.indexOf(unit);
+            const unitBaseTotal = unit.customPoints !== undefined ? unit.customPoints * unit.count : unit.points * unit.count;
+            const totalUnitPoints = unitBaseTotal;
+            const totalModels = unit.models * unit.count;
+            
+            const statsStr = `M${unit.stats.m}" T${unit.stats.t} Sv${unit.stats.sv}+ W${unit.stats.w} Ld${unit.stats.ld} OC${unit.stats.oc}`;
+            
+            const armyItem = document.createElement('div');
+            armyItem.className = 'army-item';
+            armyItem.id = `unit-${index}`;
+            armyItem.innerHTML = `
+                <div class="item-header">
+                    <h4>${unit.name}</h4>
+                    <span class="item-count">x${unit.count}</span>
+                </div>
+                <div class="item-stats">
+                    <span class="stat-line">${statsStr}</span>
+                </div>
+                <div class="item-weapons">
+                    <strong style="color: #4ecdc4; font-size: 0.85em;">Weapon:</strong>
+                    <div class="weapon-options" id="weapons-${index}">
+                        ${unit.weapons.map((weapon, idx) => `
+                            <button class="weapon-btn ${unit.selectedWeapon === weapon ? 'active' : ''}" 
+                                    onclick="changeWeapon(${index}, ${idx})">
+                                ${weapon.name} - ${weapon.range ? `R${weapon.range}" A${weapon.a} S${weapon.s} AP${weapon.ap} D${weapon.d}` : 'Melee'}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+                ${unit.abilities ? `
+                <div class="item-abilities">
+                    <strong style="color: #ff8c00; font-size: 0.85em;">Abilities:</strong>
+                    <div class="ability-list">
+                        ${unit.abilities.map(ability => `<span class="ability-tag" onclick="showAbilityTooltip('${ability}', event)">${ability}</span>`).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                ${unit.keywords ? `
+                <div class="item-keywords">
+                    <strong style="color: #4ecdc4; font-size: 0.85em;">Keywords:</strong>
+                    <div class="keyword-list">
+                        ${unit.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                <div class="item-details">
+                    <span class="pts-per-model">${unit.customPoints !== undefined ? unit.customPoints : unit.points}pts/model</span>
+                    <span>${totalModels} models</span>
+                </div>
+                <div class="item-total">
+                    <strong>${totalUnitPoints}pts</strong>
+                </div>
+                <div class="item-controls">
+                    <button class="btn btn-sm" onclick="decrementUnitAtIndex(${index})">−</button>
+                    <button class="btn btn-sm" onclick="incrementUnitAtIndex(${index})">+</button>
+                    <button class="btn btn-sm btn-edit" onclick="editUnit(${index})">Edit</button>
+                    <button class="btn btn-sm btn-remove" onclick="removeUnitAtIndex(${index})">Remove</button>
+                </div>
+            `;
+            
+            armyListDiv.appendChild(armyItem);
+        });
     }
 
-    armyListDiv.innerHTML = '';
-    
-    armyList.forEach((unit, index) => {
-        const unitBaseTotal = unit.customPoints !== undefined ? unit.customPoints * unit.count : unit.points * unit.count;
-        const weaponCost = unit.selectedWeapon ? unit.selectedWeapon.cost * unit.count : 0;
-        const totalUnitPoints = unitBaseTotal + weaponCost;
-        const totalModels = unit.models * unit.count;
-        
-        const statsStr = `M${unit.stats.m}" T${unit.stats.t} Sv${unit.stats.sv}+ W${unit.stats.w} Ld${unit.stats.ld} OC${unit.stats.oc}`;
-        const weaponStats = unit.selectedWeapon ? `R${unit.selectedWeapon.range}" A${unit.selectedWeapon.a} BS${unit.selectedWeapon.bs} S${unit.selectedWeapon.s} AP${unit.selectedWeapon.ap} D${unit.selectedWeapon.d}` : '';
-        
-        const armyItem = document.createElement('div');
-        armyItem.className = 'army-item';
-        armyItem.id = `unit-${index}`;
-        armyItem.innerHTML = `
-            <div class="item-header">
-                <h4>${unit.name}</h4>
-                <span class="item-count">x${unit.count}</span>
-            </div>
-            <div class="item-stats">
-                <span class="stat-line">${statsStr}</span>
-            </div>
-            <div class="item-weapons">
-                <strong style="color: #4ecdc4; font-size: 0.85em;">Weapon:</strong>
-                <div class="weapon-options" id="weapons-${index}">
-                    ${unit.weapons.map((weapon, idx) => `
-                        <button class="weapon-btn ${unit.selectedWeapon === weapon ? 'active' : ''}" 
-                                onclick="changeWeapon(${index}, ${idx})">
-                            ${weapon.name} ${weapon.cost > 0 ? '+' + weapon.cost + 'pts' : '(inc)'} - ${weapon.range ? `R${weapon.range}" A${weapon.a} S${weapon.s} AP${weapon.ap} D${weapon.d}` : 'Melee'}
-                        </button>
-                    `).join('')}
+    if (enemyUnits.length === 0) {
+        enemyArmyListDiv.innerHTML = '<p class="empty-message">No opponent units selected yet</p>';
+    } else {
+        enemyArmyListDiv.innerHTML = '';
+        enemyUnits.forEach(unit => {
+            const index = armyList.indexOf(unit);
+            const unitBaseTotal = unit.customPoints !== undefined ? unit.customPoints * unit.count : unit.points * unit.count;
+            const totalUnitPoints = unitBaseTotal;
+            const totalModels = unit.models * unit.count;
+            
+            const statsStr = `M${unit.stats.m}" T${unit.stats.t} Sv${unit.stats.sv}+ W${unit.stats.w} Ld${unit.stats.ld} OC${unit.stats.oc}`;
+            
+            const armyItem = document.createElement('div');
+            armyItem.className = 'army-item';
+            armyItem.id = `unit-${index}`;
+            armyItem.innerHTML = `
+                <div class="item-header">
+                    <h4>${unit.name}</h4>
+                    <span class="item-count">x${unit.count}</span>
                 </div>
-            </div>
-            ${unit.abilities ? `
-            <div class="item-abilities">
-                <strong style="color: #ff8c00; font-size: 0.85em;">Abilities:</strong>
-                <div class="ability-list">
-                    ${unit.abilities.map(ability => `<span class="ability-tag" onclick="showAbilityTooltip('${ability}', event)">${ability}</span>`).join('')}
+                <div class="item-stats">
+                    <span class="stat-line">${statsStr}</span>
                 </div>
-            </div>
-            ` : ''}
-            ${unit.keywords ? `
-            <div class="item-keywords">
-                <strong style="color: #4ecdc4; font-size: 0.85em;">Keywords:</strong>
-                <div class="keyword-list">
-                    ${unit.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
+                <div class="item-weapons">
+                    <strong style="color: #4ecdc4; font-size: 0.85em;">Weapon:</strong>
+                    <div class="weapon-options" id="weapons-${index}">
+                        ${unit.weapons.map((weapon, idx) => `
+                            <button class="weapon-btn ${unit.selectedWeapon === weapon ? 'active' : ''}" 
+                                    onclick="changeWeapon(${index}, ${idx})">
+                                ${weapon.name} - ${weapon.range ? `R${weapon.range}" A${weapon.a} S${weapon.s} AP${weapon.ap} D${weapon.d}` : 'Melee'}
+                            </button>
+                        `).join('')}
+                    </div>
                 </div>
-            </div>
-            ` : ''}
-            <div class="item-details">
-                <span class="pts-per-model">${unit.customPoints !== undefined ? unit.customPoints : unit.points}pts/model</span>
-                <span>${totalModels} models</span>
-            </div>
-            <div class="item-total">
-                <strong>${totalUnitPoints}pts</strong>
-            </div>
-            <div class="item-controls">
-                <button class="btn btn-sm" onclick="decrementUnitAtIndex(${index})">−</button>
-                <button class="btn btn-sm" onclick="incrementUnitAtIndex(${index})">+</button>
-                <button class="btn btn-sm btn-edit" onclick="editUnit(${index})">Edit</button>
-                <button class="btn btn-sm btn-remove" onclick="removeUnitAtIndex(${index})">Remove</button>
-            </div>
-        `;
-        
-        armyListDiv.appendChild(armyItem);
-    });
+                ${unit.abilities ? `
+                <div class="item-abilities">
+                    <strong style="color: #ff8c00; font-size: 0.85em;">Abilities:</strong>
+                    <div class="ability-list">
+                        ${unit.abilities.map(ability => `<span class="ability-tag" onclick="showAbilityTooltip('${ability}', event)">${ability}</span>`).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                ${unit.keywords ? `
+                <div class="item-keywords">
+                    <strong style="color: #4ecdc4; font-size: 0.85em;">Keywords:</strong>
+                    <div class="keyword-list">
+                        ${unit.keywords.map(keyword => `<span class="keyword-tag">${keyword}</span>`).join('')}
+                    </div>
+                </div>
+                ` : ''}
+                <div class="item-details">
+                    <span class="pts-per-model">${unit.customPoints !== undefined ? unit.customPoints : unit.points}pts/model</span>
+                    <span>${totalModels} models</span>
+                </div>
+                <div class="item-total">
+                    <strong>${totalUnitPoints}pts</strong>
+                </div>
+                <div class="item-controls">
+                    <button class="btn btn-sm" onclick="decrementUnitAtIndex(${index})">−</button>
+                    <button class="btn btn-sm" onclick="incrementUnitAtIndex(${index})">+</button>
+                    <button class="btn btn-sm btn-edit" onclick="editUnit(${index})">Edit</button>
+                    <button class="btn btn-sm btn-remove" onclick="removeUnitAtIndex(${index})">Remove</button>
+                </div>
+            `;
+            
+            enemyArmyListDiv.appendChild(armyItem);
+        });
+    }
 }
 
 // Ability tooltip functionality
@@ -1266,18 +1430,31 @@ function updateUI() {
 }
 
 function updateStats() {
-    const totalPoints = armyList.reduce((sum, unit) => {
+    const playerUnits = armyList.filter(u => getUnitOwner(u) === 'player');
+    const enemyUnits = armyList.filter(u => getUnitOwner(u) === 'enemy');
+
+    const playerPoints = playerUnits.reduce((sum, unit) => {
         const unitPoints = unit.customPoints !== undefined ? unit.customPoints : unit.points;
         const unitTotal = unitPoints * unit.count;
-        const weaponCost = unit.selectedWeapon ? unit.selectedWeapon.cost * unit.count : 0;
-        return sum + unitTotal + weaponCost;
+        return sum + unitTotal;
     }, 0);
-    const unitCount = armyList.reduce((sum, unit) => sum + unit.count, 0);
-    const modelCount = armyList.reduce((sum, unit) => sum + (unit.models * unit.count), 0);
+    const playerUnitCount = playerUnits.reduce((sum, unit) => sum + unit.count, 0);
+    const playerModelCount = playerUnits.reduce((sum, unit) => sum + (unit.models * unit.count), 0);
+
+    const enemyPoints = enemyUnits.reduce((sum, unit) => {
+        const unitPoints = unit.customPoints !== undefined ? unit.customPoints : unit.points;
+        const unitTotal = unitPoints * unit.count;
+        return sum + unitTotal;
+    }, 0);
+    const enemyUnitCount = enemyUnits.reduce((sum, unit) => sum + unit.count, 0);
+    const enemyModelCount = enemyUnits.reduce((sum, unit) => sum + (unit.models * unit.count), 0);
     
-    totalPointsSpan.textContent = totalPoints;
-    unitCountSpan.textContent = unitCount;
-    modelCountSpan.textContent = modelCount;
+    totalPointsSpan.textContent = playerPoints;
+    unitCountSpan.textContent = playerUnitCount;
+    modelCountSpan.textContent = playerModelCount;
+    enemyTotalPointsSpan.textContent = enemyPoints;
+    enemyUnitCountSpan.textContent = enemyUnitCount;
+    enemyModelCountSpan.textContent = enemyModelCount;
 }
 
 function exportList() {
@@ -1290,8 +1467,7 @@ function exportList() {
     const totalPoints = armyList.reduce((sum, unit) => {
         const unitPoints = unit.customPoints !== undefined ? unit.customPoints : unit.points;
         const unitTotal = unitPoints * unit.count;
-        const weaponCost = unit.selectedWeapon ? unit.selectedWeapon.cost * unit.count : 0;
-        return sum + unitTotal + weaponCost;
+        return sum + unitTotal;
     }, 0);
     
     let exportText = `WARHAMMER 40K ARMY LIST\n`;
@@ -1301,18 +1477,13 @@ function exportList() {
     armyList.forEach(unit => {
         const unitPoints = unit.customPoints !== undefined ? unit.customPoints : unit.points;
         const unitBaseTotal = unitPoints * unit.count;
-        const weaponCost = unit.selectedWeapon ? unit.selectedWeapon.cost * unit.count : 0;
-        const totalUnitPoints = unitBaseTotal + weaponCost;
+        const totalUnitPoints = unitBaseTotal;
         const statsStr = `M${unit.stats.m}" T${unit.stats.t} Sv${unit.stats.sv}+ W${unit.stats.w} Ld${unit.stats.ld} OC${unit.stats.oc}`;
         
         exportText += `${unit.name} x${unit.count}\n`;
         exportText += `  Stats: ${statsStr}\n`;
-        exportText += `  Weapon: ${unit.selectedWeapon.name}${unit.selectedWeapon.cost > 0 ? ` (+${unit.selectedWeapon.cost}pts)` : ' (included)'}\n`;
-        exportText += `  Points: ${unitPoints}pts x${unit.count} = ${unitBaseTotal}pts`;
-        if (weaponCost > 0) {
-            exportText += ` + weapons ${weaponCost}pts`;
-        }
-        exportText += ` = ${totalUnitPoints}pts total\n`;
+        exportText += `  Weapon: ${unit.selectedWeapon.name} (selected)\n`;
+        exportText += `  Points: ${unitPoints}pts x${unit.count} = ${unitBaseTotal}pts = ${totalUnitPoints}pts total\n`;
         exportText += `  Models: ${unit.models * unit.count}\n`;
         if (unit.customPoints !== undefined) {
             exportText += `  [CUSTOM POINTS APPLIED]\n`;
@@ -1404,6 +1575,105 @@ let objectiveCountValue = 3;
 let addTerrainMode = false;
 let addObjectiveMode = false;
 let draggedTerrain = null;
+let activeMission = null;
+let turnNumber = 0;
+let currentSecondaryObjectives = [];
+
+const missionDatabase = [
+    {
+        title: 'Capture and Control',
+        description: 'Control at least three objectives by the end of turn 6. Hold ground and deny the enemy key positions.'
+    },
+    {
+        title: 'Annihilation',
+        description: 'Destroy at least 60% of the enemy army points. Focus on heavy targets and priority threats.'
+    },
+    {
+        title: 'Linebreaker',
+        description: 'Have a unit in the enemy deployment zone when the battle ends. Push forward aggressively and keep pressure on their rear lines.'
+    },
+    {
+        title: 'Relic Recovery',
+        description: 'Secure the relic and keep it controlled for two full turns. Use fast units to grab it and durable units to hold it.'
+    },
+    {
+        title: 'Assassinate the Leader',
+        description: 'Eliminate the enemy CHARACTER with the highest point value. Prioritize anti-character weapons and precision strikes.'
+    },
+    {
+        title: 'Hold the Line',
+        description: 'Defend your deployment zone and prevent enemy units from crossing into it for three turns.'
+    },
+    {
+        title: 'Sabotage',
+        description: 'Destroy two enemy terrain pieces or objective markers. Use ranged firepower and mobility to reach deep targets.'
+    },
+    {
+        title: 'Recon Sweep',
+        description: 'Reveal and control the most objectives during the game. Keep your fast units alive while moving them between objectives.'
+    },
+    {
+        title: 'Shield Wall',
+        description: 'Keep at least four units within 6" of one objective for two full turns to hold the line.'
+    },
+    {
+        title: 'Flank and Disrupt',
+        description: 'Use fast units to threaten enemy flank objectives while your main force holds the center.'
+    }
+];
+
+const secondaryObjectiveDatabase = [
+    {
+        title: 'Kill an Enemy Character',
+        description: 'Destroy an enemy CHARACTER unit during this turn.',
+        points: 1
+    },
+    {
+        title: 'Hold the Flank',
+        description: 'Keep one unit within 6" of a battlefield edge objective for the turn.',
+        points: 1
+    },
+    {
+        title: 'Secure a Forward Objective',
+        description: 'Control one objective marker in the enemy half at the end of the turn.',
+        points: 2
+    },
+    {
+        title: 'Deny an Objective',
+        description: 'Prevent the enemy from controlling one objective you targeted this turn.',
+        points: 1
+    },
+    {
+        title: 'Destroy a Vehicle',
+        description: 'Destroy one enemy vehicle or monster unit.',
+        points: 2
+    },
+    {
+        title: 'Keep a Unit Alive',
+        description: 'Ensure one of your squads survives the turn without losing more than half of its models.',
+        points: 1
+    },
+    {
+        title: 'Push the Center',
+        description: 'Move one unit into the center objective area and keep it there through the end of the turn.',
+        points: 1
+    },
+    {
+        title: 'Hold the Line',
+        description: 'Keep a screening unit within 6" of your deployment zone boundary.',
+        points: 1
+    },
+    {
+        title: 'Harass Enemy Lines',
+        description: 'Do at least one point of damage to two different enemy units.',
+        points: 1
+    },
+    {
+        title: 'Recover the Relic',
+        description: 'Move a unit into range of the relic objective and keep it there for the turn.',
+        points: 2
+    }
+];
 
 // DOM elements for battlefield
 const battlefieldGridDiv = document.getElementById('battlefieldGrid');
@@ -1416,9 +1686,15 @@ const addTerrainBtn = document.getElementById('addTerrain');
 const addObjectiveBtn = document.getElementById('addObjective');
 const clearTerrainBtn = document.getElementById('clearTerrain');
 const playerDeploymentDiv = document.getElementById('playerDeployment');
+const enemyDeploymentDiv = document.getElementById('enemyDeployment');
 const strategyNotesTextarea = document.getElementById('strategyNotes');
 const saveStrategyBtn = document.getElementById('saveStrategy');
 const loadStrategyBtn = document.getElementById('loadStrategy');
+const randomMissionBtn = document.getElementById('randomMissionBtn');
+const nextTurnBtn = document.getElementById('nextTurnBtn');
+const turnNumberSpan = document.getElementById('turnNumber');
+const missionOutputDiv = document.getElementById('missionOutput');
+const secondaryObjectivesOutputDiv = document.getElementById('secondaryObjectivesOutput');
 
 // Event listeners for battlefield
 generateBattlefieldBtn.addEventListener('click', generateBattlefield);
@@ -1448,6 +1724,62 @@ objectiveCountInput.addEventListener('input', () => {
 });
 saveStrategyBtn.addEventListener('click', saveStrategy);
 loadStrategyBtn.addEventListener('click', loadStrategy);
+randomMissionBtn.addEventListener('click', generateRandomMission);
+nextTurnBtn.addEventListener('click', advanceTurn);
+
+function getRandomMission() {
+    return missionDatabase[Math.floor(Math.random() * missionDatabase.length)];
+}
+
+function setMissionOutput(mission) {
+    if (!mission) {
+        missionOutputDiv.innerHTML = '<p class="mission-placeholder">Generate a random mission to guide your game plan.</p>';
+        return;
+    }
+
+    missionOutputDiv.innerHTML = `
+        <div class="mission-title">${mission.title}</div>
+        <div class="mission-description">${mission.description}</div>
+    `;
+}
+
+function getRandomSecondaryObjectives(count = 2) {
+    const shuffled = secondaryObjectiveDatabase
+        .map(obj => ({ ...obj }))
+        .sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, count);
+}
+
+function setSecondaryObjectivesOutput() {
+    if (!currentSecondaryObjectives.length) {
+        secondaryObjectivesOutputDiv.innerHTML = '<p class="mission-placeholder">Press Next Turn to generate 2 secondary objectives.</p>';
+        return;
+    }
+
+    secondaryObjectivesOutputDiv.innerHTML = currentSecondaryObjectives.map(obj => `
+        <div class="secondary-objective-item">
+            <div class="secondary-objective-title">${obj.title}</div>
+            <div class="secondary-objective-points">${obj.points} VP</div>
+            <div class="secondary-objective-description">${obj.description}</div>
+        </div>
+    `).join('');
+}
+
+function setTurnCounter() {
+    turnNumberSpan.textContent = turnNumber;
+}
+
+function advanceTurn() {
+    turnNumber += 1;
+    currentSecondaryObjectives = getRandomSecondaryObjectives(2);
+    setTurnCounter();
+    setSecondaryObjectivesOutput();
+}
+
+function generateRandomMission() {
+    activeMission = getRandomMission();
+    setMissionOutput(activeMission);
+}
 
 // Initialize battlefield
 function initBattlefield() {
@@ -1455,6 +1787,9 @@ function initBattlefield() {
     terrainDensity = terrainDensitySelect.value;
     objectiveCountValue = parseInt(objectiveCountInput.value) || 3;
     generateBattlefield();
+    generateRandomMission();
+    setTurnCounter();
+    setSecondaryObjectivesOutput();
     updateDeploymentZones();
 }
 
@@ -1696,8 +2031,9 @@ function handleDrop(e, row, col) {
     }
 
     // Handle unit drops
-    const unitId = e.dataTransfer.getData('text/plain');
-    const unit = armyList.find(u => u.id == unitId);
+    const rawData = e.dataTransfer.getData('text/plain');
+    const [owner, unitId] = rawData.split('|');
+    const unit = armyList.find(u => getUnitOwner(u) === owner && u.id == unitId);
 
     if (unit && !cell.occupied && !cell.terrain) {
         placeUnitOnBattlefield(unit, row, col);
@@ -1778,11 +2114,11 @@ function placeUnitOnBattlefield(unit, row, col) {
     cell.unit = unit;
 
     const unitElement = document.createElement('div');
-    unitElement.className = 'battlefield-unit';
+    unitElement.className = `battlefield-unit ${unit.owner === 'enemy' ? 'enemy-unit' : 'player-unit'}`;
     unitElement.textContent = unit.name.length > 8 ? unit.name.substring(0, 8) + '...' : unit.name;
     unitElement.draggable = true;
     unitElement.addEventListener('dragstart', (e) => {
-        e.dataTransfer.setData('text/plain', unit.id);
+        e.dataTransfer.setData('text/plain', `${unit.owner}|${unit.id}`);
         e.dataTransfer.effectAllowed = 'move';
     });
     unitElement.addEventListener('dblclick', () => removeUnitFromBattlefield(row, col));
@@ -1812,9 +2148,14 @@ function clearBattlefieldUnits() {
 }
 
 function updateDeploymentZones() {
-    playerDeploymentDiv.innerHTML = '';
+    const playerUnits = armyList.filter(u => getUnitOwner(u) === 'player');
+    const enemyUnits = armyList.filter(u => getUnitOwner(u) === 'enemy');
 
-    armyList.forEach((unit, index) => {
+    playerDeploymentDiv.innerHTML = '';
+    enemyDeploymentDiv.innerHTML = '';
+
+    playerUnits.forEach(unit => {
+        const index = armyList.indexOf(unit);
         const unitElement = document.createElement('div');
         unitElement.className = 'deployment-unit';
         unitElement.style.cssText = `
@@ -1831,21 +2172,52 @@ function updateDeploymentZones() {
         unitElement.textContent = `${unit.name} x${unit.count}`;
         unitElement.draggable = true;
         unitElement.addEventListener('dragstart', (e) => {
-            e.dataTransfer.setData('text/plain', unit.id);
+            e.dataTransfer.setData('text/plain', `player|${unit.id}`);
             e.dataTransfer.effectAllowed = 'copy';
         });
 
         playerDeploymentDiv.appendChild(unitElement);
     });
 
-    if (armyList.length === 0) {
+    enemyUnits.forEach(unit => {
+        const index = armyList.indexOf(unit);
+        const unitElement = document.createElement('div');
+        unitElement.className = 'deployment-unit';
+        unitElement.style.cssText = `
+            background: rgba(200, 50, 50, 0.85);
+            color: #fff;
+            padding: 6px 8px;
+            border-radius: 4px;
+            margin: 4px;
+            cursor: move;
+            font-size: 0.8em;
+            font-weight: bold;
+            border: 1px solid #ff5555;
+        `;
+        unitElement.textContent = `${unit.name} x${unit.count}`;
+        unitElement.draggable = true;
+        unitElement.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', `enemy|${unit.id}`);
+            e.dataTransfer.effectAllowed = 'copy';
+        });
+
+        enemyDeploymentDiv.appendChild(unitElement);
+    });
+
+    if (playerUnits.length === 0) {
         playerDeploymentDiv.innerHTML = '<p style="color: #777; font-style: italic; text-align: center;">No units to deploy</p>';
+    }
+    if (enemyUnits.length === 0) {
+        enemyDeploymentDiv.innerHTML = '<p style="color: #777; font-style: italic; text-align: center;">No opponent units to deploy</p>';
     }
 }
 
 function saveStrategy() {
     const strategy = {
         notes: strategyNotesTextarea.value,
+        mission: activeMission,
+        turnNumber,
+        secondaryObjectives: currentSecondaryObjectives,
         battlefield: {
             size: battlefieldSizeSelect.value,
             density: terrainDensity,
@@ -1862,6 +2234,7 @@ function saveStrategy() {
             if (battlefieldGrid[row] && battlefieldGrid[row][col].occupied) {
                 strategy.battlefield.units.push({
                     unitId: battlefieldGrid[row][col].unit.id,
+                    owner: battlefieldGrid[row][col].unit.owner,
                     row: row,
                     col: col
                 });
@@ -1891,6 +2264,14 @@ function loadStrategy() {
     // Load notes
     strategyNotesTextarea.value = strategy.notes || '';
 
+    // Load mission
+    activeMission = strategy.mission || getRandomMission();
+    setMissionOutput(activeMission);
+    turnNumber = strategy.turnNumber || 0;
+    currentSecondaryObjectives = strategy.secondaryObjectives || [];
+    setTurnCounter();
+    setSecondaryObjectivesOutput();
+
     // Load battlefield settings
     if (strategy.battlefield) {
         battlefieldSizeSelect.value = strategy.battlefield.size || 'medium';
@@ -1905,8 +2286,9 @@ function loadStrategy() {
         // Load unit positions
         if (strategy.battlefield.units) {
             strategy.battlefield.units.forEach(unitPlacement => {
-                const unit = armyList.find(u => u.id == unitPlacement.unitId);
-                if (unit && unitPlacement.row < battlefieldSize && unitPlacement.col < battlefieldSize) {
+                const unitOwner = unitPlacement.owner === 'enemy' ? 'enemy' : 'player';
+                const unit = armyList.find(u => getUnitOwner(u) === unitOwner && u.id == unitPlacement.unitId);
+                if (unit && unitPlacement.row < battlefieldSize.height && unitPlacement.col < battlefieldSize.width) {
                     placeUnitOnBattlefield(unit, unitPlacement.row, unitPlacement.col);
                 }
             });
@@ -1915,7 +2297,7 @@ function loadStrategy() {
         // Load terrain
         if (strategy.battlefield.terrain) {
             strategy.battlefield.terrain.forEach(terrainPos => {
-                if (terrainPos.row < battlefieldSize && terrainPos.col < battlefieldSize) {
+                if (terrainPos.row < battlefieldSize.height && terrainPos.col < battlefieldSize.width) {
                     addTerrain(terrainPos.row, terrainPos.col);
                 }
             });
